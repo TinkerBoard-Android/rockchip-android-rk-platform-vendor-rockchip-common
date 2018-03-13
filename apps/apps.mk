@@ -24,11 +24,12 @@ PRODUCT_PACKAGES += \
     Lightning
 endif
 
-#ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
-#PRODUCT_PACKAGES += \
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
+PRODUCT_PACKAGES += \
+    Tinkerpower
 #    WinStartService \
 #    projectX
-#endif
+endif
 
 ifneq ($(filter rk312x rk3126c, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
