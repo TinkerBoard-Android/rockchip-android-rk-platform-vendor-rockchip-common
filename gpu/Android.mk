@@ -22,4 +22,16 @@ LOCAL_POST_INSTALL_CMD := \
 include $(BUILD_PREBUILT)
 endif
 
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), mali-t760)
+$(info MaliT760: Create a soft link for Vulkan API)
+
+$(shell mkdir -p $(ANDROID_PRODUCT_OUT)/vendor0/lib/hw;\
+cd $(ANDROID_PRODUCT_OUT)/vendor0/lib/hw; \
+ln -sf ../egl/libGLES_mali.so vulkan.rk3288.so)
+
+$(shell mkdir -p $(ANDROID_PRODUCT_OUT)/vendor1/lib/hw;\
+cd $(ANDROID_PRODUCT_OUT)/vendor1/lib/hw; \
+ln -sf ../egl/libGLES_mali.so vulkan.rk3288.so)
+endif
+
 include $(LOCAL_PATH)/gpu_performance/Android.mk
