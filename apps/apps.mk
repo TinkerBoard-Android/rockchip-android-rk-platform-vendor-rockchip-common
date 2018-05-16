@@ -20,7 +20,8 @@ PRODUCT_PACKAGES += \
 ifneq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
 PRODUCT_PACKAGES += \
     MediaFloat      \
-    RkApkinstaller
+    RkApkinstaller \
+    Lightning
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
@@ -82,6 +83,7 @@ PRODUCT_PACKAGES += \
     ChangeLedStatus \
     WifiDisplay \
     RKDeviceTest \
+    Lightning \
     DLNA
   ifeq ($(strip $(BOARD_USE_LOW_MEM256)), true)
 #        PRODUCT_PACKAGES += \
