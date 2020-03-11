@@ -90,3 +90,7 @@ PRODUCT_PACKAGES += \
 #              SimpleLauncher
   endif
 endif
+
+# AsusDebugger related packages
+PRODUCT_PACKAGES += \
+    AsusDebugger
